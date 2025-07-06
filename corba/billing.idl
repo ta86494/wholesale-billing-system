@@ -1,0 +1,5 @@
+module billingModule {
+  interface Billing {
+    string generateInvoice(in string itemDetails);
+  };
+};
