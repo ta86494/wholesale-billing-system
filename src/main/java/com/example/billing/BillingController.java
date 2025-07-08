@@ -1,13 +1,14 @@
 package com.example.billing;
 
-import org.springframework.web.bind.annotation.*;
+import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 
 @RestController
-@RequestMapping("/billing")
 public class BillingController {
 
-    @PostMapping("/generate")
-    public String generateInvoice(@RequestBody String itemDetails) {
-        return "Web Invoice: " + itemDetails + " [Generated]";
+    @GetMapping("/invoice")
+    public String generateInvoice(@RequestParam String item, @RequestParam int qty) {
+        return "Invoice generated for: " + item + " | Quantity: " + qty;
     }
 }
